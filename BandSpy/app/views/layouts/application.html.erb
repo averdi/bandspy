@@ -7,9 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+    <% if current_user %>
+      <h3><%=current_user.email%></h3>
+      <ul class="nav navbar-nav navbar-right">
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+
+          <ul class="dropdown-menu">
 
 
-<%= render 'shared/navbar' %>
+            <li><%= link_to "My Artists", user_user_artists_path(current_user.id), method: :get%></li>
+            <li><%= link_to "My Venues", user_user_venues_path(current_user.id), method: :get %></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Edit</a></li>
+          </ul>
+        </li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% end %>
+</header>
+
 
 <%= yield %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
