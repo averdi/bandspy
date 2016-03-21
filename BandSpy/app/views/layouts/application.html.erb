@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 
 <%= render 'shared/navbar' %>
 
+=======
+>>>>>>> d722106d9048e87cda3f38acfb85b8ed775d2538
 <%= yield %>
-
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
 </body>
 </html>
