@@ -1,16 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Events</h1>
- <% Bandsintown.app_id = 'bandspy' %>
-
-
-
-<% events = Bandsintown::Event.search({ %>
-<%   :location => 'Austin, TX',  %>
-<%   :start_date => Time.now, %>
-<%   :end_date => 1.week.from_now %>
-<% }) %>
-
 
 <table>
   <thead>
