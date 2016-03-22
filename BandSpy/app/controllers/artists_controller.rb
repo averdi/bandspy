@@ -7,6 +7,13 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
+
+    @events = Bandsintown::Event.search({
+:location => 'Austin, TX',
+:start_date => Time.now,
+:end_date => 1.week.from_now
+})
+
   end
 
   # GET /artists/1
@@ -29,10 +36,8 @@ class ArtistsController < ApplicationController
     # @artist = Artist.create()
     name = params[:name]
 
-    follow_artist = name
-
       artist = Bandsintown::Artist.new({
-        :name => follow_artist
+        :name => name
       })
       Artist.create(name: artist.name)
 
