@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Bandsintown.app_id = 'Bandspy'
+
+events = Bandsintown::Event.search({
+    :location => 'Boston, MA',
+   :start_date => Time.now,
+  :end_date => 1.week.from_now
+   })
+
+events.each do |event|
+  Event.create(artist_id: event.artist.mbid, venue_id: venue.id, datetime: event.datetime)
+end
