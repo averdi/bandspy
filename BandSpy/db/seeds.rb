@@ -8,8 +8,13 @@
 
  Bandsintown.app_id = 'bandspy'
 
-artist = Bandsintown::Artist.new({
-  :name => "The Killers"
-})
-Artist.create(name: artist.name, on_tour: true)
+
+artists = ["The Killers", "The Beatles", "Adele"]
+
+artists.each do |artist_name|
+  artist = Bandsintown::Artist.new({
+  :name => artist_name
+    })
+  Artist.create(name: artist.name, on_tour: true)
+end
 
