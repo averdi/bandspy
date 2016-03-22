@@ -38,16 +38,20 @@ before_filter :configure_account_update_params, only: [:update]
 
   protected
 
-  # my custom fields are :name, :heard_how
+  # my custom fields are :name, :city, :state
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :name, :city, :state
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :city
+    devise_parameter_sanitizer.for(:sign_up) << :state
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update) << :name, :city, :state
+    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :city
+    devise_parameter_sanitizer.for(:account_update) << :state
 
   end
 
