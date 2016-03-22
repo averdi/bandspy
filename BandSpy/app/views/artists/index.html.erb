@@ -33,9 +33,11 @@
 
 
 <br>
-
-  <%= @events %>
-
+<ul>
+  <% @events.each do |event| %>
+  <li><%= event.first.venue.name %></li>
+  <% end %>
+</ul>
 
 
 <br>

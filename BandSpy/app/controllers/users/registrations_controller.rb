@@ -8,9 +8,9 @@ before_filter :configure_account_update_params, only: [:update]
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   def edit
@@ -18,9 +18,9 @@ before_filter :configure_account_update_params, only: [:update]
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -52,7 +52,6 @@ before_filter :configure_account_update_params, only: [:update]
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :city
     devise_parameter_sanitizer.for(:account_update) << :state
-
   end
 
   # The path used after sign up.
