@@ -11,8 +11,9 @@
 <%= render "shared/navbar" %>
 </header>
 
-
-<%= yield %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<div class="container">
+  <%= yield %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+</div>
 </body>
 </html>
