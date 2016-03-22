@@ -27,7 +27,8 @@ gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'bandsintown', git: 'https://github.com/changamanda/api-gem.git'
+gem 'bandsintown', git:'https://github.com/changamanda/api-gem.git'
+
 
 gem 'rest-client'
 

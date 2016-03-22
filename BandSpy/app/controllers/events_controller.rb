@@ -12,8 +12,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @artist = Artist.find(params[:id])
-
+    @event = Event.find(params[:event])
   end
 
   # GET /events/new
