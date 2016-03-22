@@ -9,7 +9,7 @@
  Bandsintown.app_id = 'bandspy'
 
 
-artists = ["The Killers", "The Beatles", "Adele"]
+artists = ["The Cramps", "The Beatles", "Adele"]
 
 artists.each do |artist_name|
   artist = Bandsintown::Artist.new({
