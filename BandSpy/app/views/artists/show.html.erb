@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>On tour:</strong>
-  <%= @artist.on_tour %>
+  <strong>Concerts:</strong>
+  <%= @artist.events.first %>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  post 'artist/follow', to: 'artists#create'
+
   resources :user_artists
   resources :events
   resources :venues

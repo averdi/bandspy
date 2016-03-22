@@ -26,17 +26,28 @@ class ArtistsController < ApplicationController
   # POST /artists
   # POST /artists.json
   def create
-    @artist = Artist.new(artist_params)
+    # @artist = Artist.create()
+    name = params[:name]
 
-    respond_to do |format|
-      if @artist.save
-        format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
-        format.json { render :show, status: :created, location: @artist }
-      else
-        format.html { render :new }
-        format.json { render json: @artist.errors, status: :unprocessable_entity }
-      end
-    end
+    follow_artist = name
+
+      artist = Bandsintown::Artist.new({
+        :name => follow_artist
+      })
+      Artist.create(name: artist.name)
+
+    # @artist = Artist.new(artist_params)
+
+    # respond_to do |format|
+    #   if @artist.save
+    #     format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
+    #     format.json { render :show, status: :created, location: @artist }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @artist.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    redirect_to artists_path
   end
 
   # PATCH/PUT /artists/1
