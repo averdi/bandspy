@@ -27,7 +27,9 @@ gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'bandsintown'
+gem 'bandsintown', git:'https://github.com/changamanda/api-gem.git'
+
+gem 'rest-client'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
