@@ -27,8 +27,16 @@
 </table>
 
 <br>
+<h3>Check out these upcoming events in <%=current_user.city%>:</h3>
 
-<%= @events %>
+
+<br>
+<ul>
+  <% @events.map do |event| %>
+    <li><%= event %></li>
+  <% end %>
+</ul>
+
 
 <br>
 

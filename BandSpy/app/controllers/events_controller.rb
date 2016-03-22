@@ -12,6 +12,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @artist = Artist.find(params[:id])
+
   end
 
   # GET /events/new

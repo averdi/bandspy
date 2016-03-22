@@ -7,8 +7,9 @@
 
 <p>
   <strong>Concerts:</strong>
-  <%= @artist.events.first %>
 </p>
+  <% @events.each do |event| %>
+    <p><%= event.location %></p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
