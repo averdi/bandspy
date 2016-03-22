@@ -5,9 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
  Bandsintown.app_id = 'bandspy'
 
-artists = ["The Killers", "The Beatles", "Adele"]
+
+artists = ["The Cramps", "The Beatles", "Adele"]
 
 artists.each do |artist_name|
   artist = Bandsintown::Artist.new({
@@ -15,3 +17,4 @@ artists.each do |artist_name|
     })
   Artist.create(name: artist.name, on_tour: true)
 end
+

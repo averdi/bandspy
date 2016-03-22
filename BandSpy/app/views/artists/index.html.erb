@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Listing Artists</h1>
 
 <table>
@@ -27,3 +28,13 @@
 <br>
 
 <%= link_to 'New Artist', new_artist_path %>
+
+events = Bandsintown::Event.search({
+:location => 'Austin, TX',
+:start_date => Time.now,
+:end_date => 1.week.from_now
+})
+
+
+
+
