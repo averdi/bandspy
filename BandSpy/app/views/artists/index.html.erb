@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Welcome, <%=current_user.name%>!</h2>
 
 <h1>Listing Artists</h1>
 
@@ -26,8 +27,11 @@
 </table>
 
 <br>
- <h3>Check out these upcoming events in <%=current_user.city%>:</h3>
 
+<h3>Check out these upcoming events in <%=current_user.city%>:</h3>
+
+
+<br>
 <ul>
   <% @events.map do |event| %>
     <li><%= event %></li>
