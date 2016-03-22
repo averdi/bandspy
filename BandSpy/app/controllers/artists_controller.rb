@@ -12,6 +12,11 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @artist = Artist.find(params[:name])
+
+    @events = Bandsintown::Event.search({
+      :artists => @artist.name
+    })
   end
 
   # GET /artists/new
@@ -29,10 +34,8 @@ class ArtistsController < ApplicationController
     # @artist = Artist.create()
     name = params[:name]
 
-    follow_artist = name
-
       artist = Bandsintown::Artist.new({
-        :name => follow_artist
+        :name => name
       })
       Artist.create(name: artist.name)
 
