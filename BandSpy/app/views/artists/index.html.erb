@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @artists.each do |artist| %>
+  <% @artists.each do |artist| %>
       <tr>
         <td><%= artist.name %></td>
         <td><%= artist.on_tour %></td>
@@ -35,10 +35,21 @@
 
 <br>
 <ul>
-  <% @events.each do |event| %>
-  <li><%= event.artists.first.name %> -- <%= event.venue.name %> -- <%= event.ticket_status %></li>
+ <% @events.each do |event| %>
+  <li><a href="<%=event.artists.first.bandsintown_url%>"><%=event.artists.first.name %></a> -- <%= event.venue.name %></li>
+
+  <li> <% if event.ticket_status == 'unavailable' %>
+  <%= 'No tickets available' %>
+  <% else event.ticket_status == 'available' %>
+  <%= link_to event.ticket_url do %>
+    Tickets
+    <% end %>
+  <% end %></li>
+
+
   <% end %>
 </ul>
+
 
 
 <br>
