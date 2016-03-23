@@ -13,6 +13,14 @@ class ArtistsController < ApplicationController
       :start_date => Time.now,
       :end_date => 1.week.from_now
     })
+
+    @artists = Artist.all
+      if params[:search]
+        raise
+        @artists= Artist.search(params[:search]).order("created_at DESC")
+      else
+        @artists = Artist.all.order('created_at DESC')
+      end
   end
 
   # GET /artists/1
