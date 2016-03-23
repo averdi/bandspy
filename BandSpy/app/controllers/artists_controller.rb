@@ -27,6 +27,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @user_artist = UserArtist.new
     @artist = Artist.find(params[:id])
       name = @artist.name
       @events = Bandsintown::Event.search({
