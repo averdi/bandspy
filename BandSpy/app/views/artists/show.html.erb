@@ -8,10 +8,14 @@
 <p>
   <strong>Concerts:</strong>
 </p>
-  <% @events.each do |event| %>
-    <p><%= event.location %></p>
+  <ul>
+<% @events.each do |event| %>
+    <li><%= event.artists.first.name %> -- <%= event.venue.name %> -- <%= event.ticket_status %></li>
+    <% end %>
+  </ul>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+
 
 

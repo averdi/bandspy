@@ -18,7 +18,7 @@
       <tr>
         <td><%= artist.name %></td>
         <td><%= artist.on_tour %></td>
-        <td><%= link_to 'Show', artist %></td>
+        <td><%= link_to 'Show', artist_path(@artist) %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,6 +34,7 @@
 
 
 <br>
+
 <ul>
  <% @events.each do |event| %>
   <li><a href="<%=event.artists.first.bandsintown_url%>"><%=event.artists.first.name %></a> -- <%= event.venue.name %></li>
@@ -45,10 +46,6 @@
     Tickets
     <% end %>
   <% end %></li>
-
-
-  <% end %>
-</ul>
 
 
 
