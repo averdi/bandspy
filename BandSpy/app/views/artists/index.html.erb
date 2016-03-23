@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Welcome, <%=current_user.name%>!</h2>
+<%= image_tag "Spy1.png", :width => 75, :height => 75 %><h2>Welcome, <%=current_user.name%>!</h2>
 
 <h1>Artists Following</h1>
 
@@ -31,12 +31,11 @@
 
 <h3>Check out these upcoming events in <%=current_user.location%>:</h3>
 
-
 <br>
 
 <ul>
  <% @events.each do |event| %>
-  <li><a href="<%=event.artists.first.bandsintown_url%>"><%=event.artists.first.name %></a> -- <%= event.venue.name %> --
+  <li><a href="<%=event.artists.first.bandsintown_url%>"><%=event.artists.first.name %></a> -- <%= event.venue.name %> -- <strong><%= event.datetime.strftime("%l%p, %A, %B %d") %></strong> --
 
   <% if event.ticket_status == 'unavailable' %>
   <%= 'No tickets available' %>
@@ -51,6 +50,7 @@
 <br>
 
 <% end %>
+
 
 <%= link_to 'Follow New Artist', new_artist_path %>
 
