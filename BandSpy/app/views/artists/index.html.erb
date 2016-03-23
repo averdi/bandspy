@@ -18,9 +18,8 @@
   <tbody>
   <% @artists.each do |artist| %>
       <tr>
-        <td><%= artist.name %></td>
+        <td><%= link_to artist.name, artist_path(artist.id) %></td>
         <td><%= artist.on_tour %></td>
-        <td><%= link_to 'Show', artist_path(artist) %></td>
         <td><%= form_for(@user_artist) do |f| %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :artist_id, value: artist.id %>

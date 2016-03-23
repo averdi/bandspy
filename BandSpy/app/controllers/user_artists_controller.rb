@@ -32,6 +32,15 @@ class UserArtistsController < ApplicationController
     end
   end
 
+  def destroy
+    raise
+    @my_artist.destroy
+    respond_to do |format|
+      format.html { redirect_to user_user_artists_path(current_user.id), notice: 'Artist was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def user_artist_params
