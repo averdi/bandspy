@@ -14,13 +14,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state, autofocus: true, placeholder: "example: TX" %>
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true, placeholder: 'Ex: Austin, TX' %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
