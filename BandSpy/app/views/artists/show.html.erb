@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <%= @events.first.artists.first.name %>
+      </p>
+      </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
-
-<p>
-  <strong>Concerts:</strong>
-</p>
+  <p>
+    <strong>Concerts:</strong>
+  </p>
   <ul>
     <% @events.each do |event| %>
     <li><%= event.venue.name %> --
       <% if event.ticket_status == 'unavailable' %>
-            <%= 'No tickets available' %>
-           <% else event.ticket_status == 'available' %>
+          <%= 'No tickets available' %>
+          <% else event.ticket_status == 'available' %>
           <%= link_to event.ticket_url do %>
-          Tickets
+            Tickets
+          <% end %>
       <% end %>
+      <%= event.venue.city%>, <%= event.venue.region%>
+      <%= event.datetime.strftime("%l%p, %A, %B %d") %>
     <% end %>
-    <%= event.datetime %>
-  <% end %></li>
+    </li>
   </ul>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+</div>
 
 
 
