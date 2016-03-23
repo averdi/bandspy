@@ -2,6 +2,7 @@
 <h2>My Artists</h2>
 
 <!-- If current_user follows artists list the artists -->
-
+<% @artists.each do |artist| %>
+<p><%= artist.artist_id %></p>
 <!-- If current_user follows no artists -->
   <p>It looks like you haven't followed any artists yet! Get to work!</p>

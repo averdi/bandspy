@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
       :end_date => 1.week.from_now
     })
 
+     @user_artist = UserArtist.new
   end
 
   # GET /artists/1
