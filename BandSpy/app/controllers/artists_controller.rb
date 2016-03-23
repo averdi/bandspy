@@ -21,6 +21,7 @@ class ArtistsController < ApplicationController
       else
         @artists = Artist.all.order('created_at DESC')
       end
+     @user_artist = UserArtist.new
   end
 
   # GET /artists/1
@@ -31,6 +32,7 @@ class ArtistsController < ApplicationController
       @events = Bandsintown::Event.search({
       :artists => [name]
     })
+
   end
 
   # GET /artists/new
@@ -65,6 +67,7 @@ class ArtistsController < ApplicationController
     #   end
     # end
     redirect_to artist_path(@artist.id)
+
   end
 
   # PATCH/PUT /artists/1
