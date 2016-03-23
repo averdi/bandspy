@@ -27,16 +27,21 @@
 </table>
 
 <br>
+<%= render 'form' %><br>
 
 
-<h3>Check out these upcoming events in <%=current_user.city%>:</h3>
+<h3>Check out these upcoming events in <%=current_user.location%>:</h3>
 
 
 <br>
  <ul>
   <% @events.each do |event| %>
+<<<<<<< HEAD
   <li><%= event.venue.name %>--<%= event.artists.first.name %></li>
 
+=======
+  <li><%= event.artists.first.name %> -- <%= event.venue.name %> -- <%= event.ticket_status %></li>
+>>>>>>> 4aec6ac23c9298bd0591966d2c343d5ee58b6aa2
   <% end %>
 </ul>
 
