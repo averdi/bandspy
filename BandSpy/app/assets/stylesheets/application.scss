@@ -14,3 +14,28 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.head {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+}
+
+.cityEvents {
+  list-style: none;
+}
+
+#cityEvents {
+  font-size: 20px;
+}
+
+.jumbotron {
+  background-color: rgb(193, 169, 217);
+}
+
+#spyLogo {
+  float: left;
+}
+
+#welcome {
+  font-size: 40px;
+}
