@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     name = @artist.name
      @events = Bandsintown::Event.search({
-      :artist => 'Luke Bryan'
+      :artist => name
     })
   end
 
