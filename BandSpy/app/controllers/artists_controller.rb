@@ -43,7 +43,7 @@ class ArtistsController < ApplicationController
       artist = Bandsintown::Artist.new({
         :name => name
       })
-      Artist.create(name: artist.name)
+      @artist = Artist.create(name: artist.name)
 
     # @artist = Artist.new(artist_params)
 
@@ -56,7 +56,7 @@ class ArtistsController < ApplicationController
     #     format.json { render json: @artist.errors, status: :unprocessable_entity }
     #   end
     # end
-    redirect_to artists_path
+    redirect_to artist_path(@artist.id)
   end
 
   # PATCH/PUT /artists/1
