@@ -21,6 +21,7 @@ class ArtistsController < ApplicationController
       else
         @artists = Artist.all.order('created_at DESC')
       end
+     @user_artist = UserArtist.new
   end
 
   # GET /artists/1
@@ -31,6 +32,7 @@ class ArtistsController < ApplicationController
       @events = Bandsintown::Event.search({
       :artists => [name]
     })
+
   end
 
   # GET /artists/new
@@ -51,7 +53,7 @@ class ArtistsController < ApplicationController
       artist = Bandsintown::Artist.new({
         :name => name
       })
-      Artist.create(name: artist.name)
+      @artist = Artist.create(name: artist.name)
 
     # @artist = Artist.new(artist_params)
 
@@ -64,7 +66,8 @@ class ArtistsController < ApplicationController
     #     format.json { render json: @artist.errors, status: :unprocessable_entity }
     #   end
     # end
-    redirect_to artists_path
+    redirect_to artist_path(@artist.id)
+
   end
 
   # PATCH/PUT /artists/1
