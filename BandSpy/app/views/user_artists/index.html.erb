@@ -1,5 +1,5 @@
 <!-- This page will show all artists that the current_user follows. -->
 <h2>My Artists</h2>
-<% @user_artists.each do |user_artist| %>
-<p><%= user_artist.artist_id %></p>
+<% @my_artists.each do |my_artist| %>
+<p><%= my_artist.first.name %></p>
 <% end %>

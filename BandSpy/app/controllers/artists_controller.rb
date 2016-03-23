@@ -58,7 +58,7 @@ class ArtistsController < ApplicationController
     #     format.json { render json: @artist.errors, status: :unprocessable_entity }
     #   end
     # end
-    redirect_to artists_path
+    redirect_to artist_path()
   end
 
   # PATCH/PUT /artists/1

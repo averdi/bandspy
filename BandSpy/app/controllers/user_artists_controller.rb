@@ -4,10 +4,12 @@ class UserArtistsController < ApplicationController
   # Get all user's artists from user_artists table
   # by finding all artist_id that is with user_id
 
-    @user_artists = UserArtist.where(params[:user_id]==current_user.id)
+    @user_artists = UserArtist.where(:user_id => current_user.id)
 
   # Match artist_id from user_artists table to id in artists table
   # to get name from artist table
+
+      @my_artists = @user_artists.map { |user_artist| Artist.where(:id => user_artist.artist_id) }
 
   # List all artists by name with link to artists#show
   end
