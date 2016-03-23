@@ -16,7 +16,7 @@ class ArtistsController < ApplicationController
 
     @artists = Artist.all
       if params[:search]
-        raise
+
         @artists= Artist.search(params[:search]).order("created_at DESC")
       else
         @artists = Artist.all.order('created_at DESC')
