@@ -20,8 +20,8 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @artist = Artist.find(params[:id])
-    name = @artist.name
-     @events = Bandsintown::Event.search({
+      name = @artist.name
+      @events = Bandsintown::Event.search({
       :artists => [name]
     })
   end
