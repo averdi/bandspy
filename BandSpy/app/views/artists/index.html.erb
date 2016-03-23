@@ -33,9 +33,10 @@
 
 
 <br>
-<ul>
+ <ul>
   <% @events.each do |event| %>
-  <li><%= event.first.venue.name %></li>
+  <li><%= event.venue.name %>--<%= event.artists.first.name %></li>
+
   <% end %>
 </ul>
 

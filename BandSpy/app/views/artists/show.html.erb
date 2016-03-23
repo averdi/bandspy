@@ -8,10 +8,14 @@
 <p>
   <strong>Concerts:</strong>
 </p>
-  <% @events.each do |event| %>
-    <p><%= event.location %></p>
+  <ul>
+   <%= @artist = Bandsintown::Artist.new({:name => "The Killers"
+    })
+    @events = artist.events %>
+</ul>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+
 
 

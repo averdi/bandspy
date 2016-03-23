@@ -7,18 +7,16 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
-     @events = Bandsintown::Event.search({
-      :location => 'Austin, TX',
-      :start_date => Time.now,
-      :end_date => 1.week.from_now
+     @events = Bandsintown::Event.search({:location => 'Austin, TX', :start_date => Time.now, :end_date => 1.week.from_now
     })
-
   end
 
   # GET /artists/1
   # GET /artists/1.json
-  def show
-    @artist = Artist.find(params[:id])
+  def shows
+    @artist = Bandsintown::Artist.new({:name => "The Killers"
+    })
+    events = artist.events
   end
 
   # GET /artists/new
